@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "kiosk-management": "apps/kiosk-management",
+    "kiosk-management-e2e": "apps/kiosk-management-e2e"
+  }
+}

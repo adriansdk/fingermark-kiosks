@@ -1,0 +1,83 @@
+{
+  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "sourceRoot": "apps/kiosk-management/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/kiosk-management",
+        "index": "apps/kiosk-management/src/index.html",
+        "baseHref": "/",
+        "main": "apps/kiosk-management/src/main.tsx",
+        "polyfills": "apps/kiosk-management/src/polyfills.ts",
+        "tsConfig": "apps/kiosk-management/tsconfig.app.json",
+        "assets": [
+          "apps/kiosk-management/src/favicon.ico",
+          "apps/kiosk-management/src/assets"
+        ],
+        "styles": ["apps/kiosk-management/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/kiosk-management/src/environments/environment.ts",
+              "with": "apps/kiosk-management/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "kiosk-management:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "kiosk-management:build:development"
+        },
+        "production": {
+          "buildTarget": "kiosk-management:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/kiosk-management/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/kiosk-management"],
+      "options": {
+        "jestConfig": "apps/kiosk-management/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
