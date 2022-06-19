@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "data-access": "libs/data-access",
     "kiosk-management": "apps/kiosk-management",
     "kiosk-management-e2e": "apps/kiosk-management-e2e"
   }
