@@ -19,7 +19,8 @@
 - Clone the [repository]('https://github.com/adriansdk/simpleshow.git')
 - Install dependencies using: `npm install`
 - Run the app in development mode using: `npm start`
-- The app should automatically open at `http://localhost:4200/`, if not, open manually and have fun!
+- The app should automatically open at `http://localhost:4200/`!
+- Input any name and email to create your user and login.
 
 # Decision making and considerations.
 
