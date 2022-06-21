@@ -1,20 +1,30 @@
-import { createKiosk } from '@fingermark-workspace/data-access';
+import { createKiosk, IUser } from '@fingermark-workspace/data-access';
 import { useState } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { useRecoilValue } from 'recoil';
+import { Button, Form, Modal } from 'semantic-ui-react';
+import { userAtom } from '../atoms/atoms';
 
 export default function CreateKioskForm() {
+  const user = useRecoilValue<IUser>(userAtom);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [description, setDescription] = useState('');
   const [storeOpeningTime, setStoreOpeningTime] = useState('09:00');
   const [storeClosingTime, setStoreClosingTime] = useState('17:00');
-  const [isKioskActive, setIsKioskActive] = useState(true);
+  const [isActive, setIsActive] = useState(true);
 
   function submitCreateRequest() {
-    createKiosk({
-      description,
-      storeOpeningTime,
-      storeClosingTime,
-      isKioskActive,
-    });
+    createKiosk(
+      {
+        description,
+        storeOpeningTime,
+        storeClosingTime,
+        isActive,
+      },
+      user.name
+    );
+    alert('Kiosk Created Succesfully')
+    setIsModalOpen(false);
   }
 
   return (
@@ -50,20 +60,38 @@ export default function CreateKioskForm() {
             control="input"
             type="radio"
             name="activeKioskRadio"
-            defaultChecked={isKioskActive}
-            onClick={() => setIsKioskActive(true)}
+            defaultChecked={isActive}
+            onClick={() => setIsActive(true)}
           />
           <Form.Field
             label="No"
             control="input"
             type="radio"
             name="activeKioskRadio"
-            onClick={() => setIsKioskActive(false)}
+            onClick={() => setIsActive(false)}
           />
         </Form.Group>
-        <Button onClick={submitCreateRequest} type="submit">
-          Submit
+        <Button onClick={() => setIsModalOpen(true)} type="submit">
+          Create Kiosk
         </Button>
+        <Modal
+          size="mini"
+          open={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        >
+          <Modal.Header>Create Kiosk</Modal.Header>
+          <Modal.Content>
+            <p>Are you sure you want to create a new kiosk?</p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button negative onClick={() => setIsModalOpen(false)}>
+              No
+            </Button>
+            <Button positive onClick={() => submitCreateRequest()}>
+              Yes
+            </Button>
+          </Modal.Actions>
+        </Modal>
       </Form>
     </div>
   );
