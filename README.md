@@ -4,7 +4,7 @@
         Fingermark assessment 
         <br>
     </h1>
-    <p style="font-size: 1.35rem; font-weight: 500; padding: 2rem; text-align: center"> This is my solution for the items proposed [here](https://fingermark.notion.site/Kiosk-Management-Technical-Test-Front-end-4fb08f5444104aef815b732802947bf0)  </p>
+    <p style="font-size: 1.35rem; font-weight: 500; padding: 2rem; text-align: center"> This is my solution for the items proposed <a href="https://fingermark.notion.site/Kiosk-Management-Technical-Test-Front-end-4fb08f5444104aef815b732802947bf0" target="_blank">here</a> </p>
     <br>
 </div>
 
@@ -29,9 +29,9 @@ This project was proposed to be built with React, with a monorepo structure and 
 
 ### Things I would improve or add
 
-- Code readability and separation, did not spend a ton of time organizing my file structure, some things such as Interfaces might be out of place.  
+- Code readability and separation, did not spend a ton of time organizing my file structure, some things such as Interfaces might be out of place.
 - Semantic UI is fine for this use case, but I would have loved to use Tailwind instead and have more control of my components styles.
-- If I had more time to work on this project, I would implement form validation, little to no time was spent on that . 
+- If I had more time to work on this project, I would implement form validation, little to no time was spent on that .
 
 ### Total time spent on project
 
