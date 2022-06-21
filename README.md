@@ -1,94 +1,42 @@
+<div align=center>
+    <h1 align=center>
+        <br>
+        Fingermark assessment 
+        <br>
+    </h1>
+    <p style="font-size: 1.35rem; font-weight: 500; padding: 2rem; text-align: center"> This is my solution for the items proposed [here](https://fingermark.notion.site/Kiosk-Management-Technical-Test-Front-end-4fb08f5444104aef815b732802947bf0)  </p>
+    <br>
+</div>
 
+## Setup
 
-# FingermarkWorkspace
+### Requirements
 
-This project was generated using [Nx](https://nx.dev).
+- Node Package Manager (NPM)
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+### Steps to run this project locally
 
-🔎 **Smart, Fast and Extensible Build System**
+- Clone the [repository]('https://github.com/adriansdk/simpleshow.git')
+- Install dependencies using: `npm install`
+- Run the app in development mode using: `npm start`
+- The app should automatically open at `http://localhost:4200/`, if not, open manually and have fun!
 
-## Adding capabilities to your workspace
+# Decision making and considerations.
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+### Choice of tools:
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+This project was proposed to be built with React, with a monorepo structure and utilizing a mocked API. For my build system and monorepo support, I decided to go with NX, since I had a little bit of experience with it, and I knew it had bootstrap options for initializing projects with React and Typescript. I used [mockapi.io](mockapi.io) for my backend, since it is super easy to get up and running and would be able to provide all of the routes required for this project out of the box. I assumed styling was not the focus of this project since no design requirement was provided, and since I didn't need to heavily customize my components, I decided to use [Semantic UI](https://react.semantic-ui.com/) for my styling needs. <br>
 
-Below are our core plugins:
+### Things I would improve or add
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+- Code readability and separation, did not spend a ton of time organizing my file structure, some things such as Interfaces might be out of place.  
+- Semantic UI is fine for this use case, but I would have loved to use Tailwind instead and have more control of my components styles.
+- If I had more time to work on this project, I would implement form validation, little to no time was spent on that . 
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+### Total time spent on project
 
-## Generate an application
+9-10 hours.
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+# Developer:
 
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@fingermark-workspace/mylib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+- [Adrian Visnieski](https://github.com/adriansdk)
